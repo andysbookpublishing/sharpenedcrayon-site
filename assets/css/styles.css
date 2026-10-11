@@ -173,3 +173,30 @@ tr:last-child td{border-bottom:0}
 .prose h3{margin-top:1.2em}
 .pages .sample-img::after{content:"Sample";font-size:.62rem;left:6px;bottom:6px;padding:2px 7px}
 .bg-ink .btn-ghost,.bg-ink .btn-ghost:hover{color:#fff;border-color:#fff;background:transparent}
+
+/* ---- Packages page, simplified all-in layout (Oct 11, 2026; FINAL v2 pricing) ---- */
+.founding-wrap{padding:18px 0 0}
+.founding{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 24px;background:var(--tang-soft);border:2px solid var(--tang);border-radius:var(--radius);padding:14px 22px}
+.founding p{margin:0}
+.founding-text{flex:1 1 420px;line-height:1.45}
+.founding-tag{display:inline-block;font-weight:800;font-size:.72rem;text-transform:uppercase;letter-spacing:.1em;background:var(--tang);color:#fff;padding:3px 10px;border-radius:999px;margin-right:6px;vertical-align:2px}
+.founding-small{display:block;font-size:.9rem;color:var(--muted);margin-top:2px}
+.founding-links{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.btn-small{padding:8px 16px;font-size:.95rem}
+.founding-link{font-weight:700}
+.page-hero-tight{padding-top:28px;padding-bottom:8px}
+.pkg-section{padding-top:20px}
+.pkg-simple h2{font-size:1.5rem;margin:0}
+.pkg-simple .price{font-size:2.4rem;margin:.15em 0 0}
+.pkg-simple .price small{font-size:1rem}
+.pkg-simple .pages{font-weight:800;color:var(--muted);margin:0}
+.pkg-simple .books{display:inline-block;align-self:flex-start;font-weight:800;background:var(--sky-soft);color:var(--ink);border-radius:999px;padding:4px 12px;margin:.45em 0 .9em}
+.pkg-simple.featured .books{background:var(--tang-soft)}
+.pkg-simple .ticks{margin:0 0 1.2em}
+.pkg-simple .btn{margin-top:auto;align-self:stretch;text-align:center}
+.pkg-bundle{text-align:center;font-size:1.1rem;margin:22px 0 0}
+@media (max-width:760px){
+  .founding{padding:14px 16px}
+  .founding-text{flex-basis:100%}
+  .pkg-simple .price{font-size:2.1rem}
+}
