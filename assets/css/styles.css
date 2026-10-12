@@ -1,6 +1,7 @@
 /* Sharpened Crayon: site styles. Brand: brand/brand-kit.md (colors, Fredoka + Nunito). */
 @font-face{font-family:"Fredoka";src:url(../fonts/fredoka-500.woff2) format("woff2");font-weight:500;font-display:swap}
 @font-face{font-family:"Fredoka";src:url(../fonts/fredoka-600.woff2) format("woff2");font-weight:600;font-display:swap}
+@font-face{font-family:"Fredoka";src:url(../fonts/fredoka-700.woff2) format("woff2");font-weight:700;font-display:swap}
 @font-face{font-family:"Nunito";src:url(../fonts/nunito-400.woff2) format("woff2");font-weight:400;font-display:swap}
 @font-face{font-family:"Nunito";src:url(../fonts/nunito-700.woff2) format("woff2");font-weight:700;font-display:swap}
 @font-face{font-family:"Nunito";src:url(../fonts/nunito-800.woff2) format("woff2");font-weight:800;font-display:swap}
@@ -58,7 +59,7 @@ a:hover{color:#000;text-decoration-color:var(--sky)}
 }
 
 /* buttons: Graphite text on Tangerine keeps WCAG AA contrast */
-.btn{display:inline-block;background:var(--tang);color:var(--ink);font-weight:800;text-decoration:none;padding:13px 22px;border-radius:999px;border:2px solid var(--tang);line-height:1.2;transition:transform .12s ease,box-shadow .12s ease}
+.btn{display:inline-block;background:var(--tang);color:var(--ink);font-family:"Fredoka","Nunito",system-ui,sans-serif;font-weight:600;text-decoration:none;padding:13px 22px;border-radius:999px;border:2px solid var(--tang);line-height:1.2;transition:transform .12s ease,box-shadow .12s ease}
 .btn:hover{color:var(--ink);transform:translateY(-1px);box-shadow:0 6px 0 rgba(35,40,56,.15)}
 .btn-ghost{background:transparent;border-color:var(--ink)}
 .btn-ghost:hover{background:#fff}
@@ -179,7 +180,7 @@ tr:last-child td{border-bottom:0}
 .founding{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 24px;background:var(--tang-soft);border:2px solid var(--tang);border-radius:var(--radius);padding:14px 22px}
 .founding p{margin:0}
 .founding-text{flex:1 1 420px;line-height:1.45}
-.founding-tag{display:inline-block;font-weight:800;font-size:.72rem;text-transform:uppercase;letter-spacing:.1em;background:var(--tang);color:#fff;padding:3px 10px;border-radius:999px;margin-right:6px;vertical-align:2px}
+.founding-tag{display:inline-block;font-weight:800;font-size:.72rem;text-transform:uppercase;letter-spacing:.1em;background:#B84318;color:#fff;padding:3px 10px;border-radius:999px;margin-right:6px;vertical-align:2px} /* darkened Tangerine for WCAG AA: white on #B84318 = 5.45:1 (was 3.04:1 on #F26A3D) */
 .founding-small{display:block;font-size:.9rem;color:var(--muted);margin-top:2px}
 .founding-links{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
 .btn-small{padding:8px 16px;font-size:.95rem}
@@ -229,3 +230,7 @@ tr:last-child td{border-bottom:0}
 .lp-pages{grid-template-columns:repeat(3,1fr);margin-top:18px}
 .lp-sample-wide .lp-pages{max-width:640px}
 @media (max-width:520px){.lp-sample-head{grid-template-columns:110px 1fr;gap:14px}}
+
+/* Fredoka brand font (Oct 12, 2026): the header/footer logos are SVGs with the wordmark outlined in Fredoka 700
+   (assets/img/brand/*-700.svg, from site_build/fredoka.py). This rule covers any live-text brand name. */
+.brand,.site-footer .brand-name{font-family:"Fredoka","Nunito",system-ui,sans-serif;font-weight:700}
