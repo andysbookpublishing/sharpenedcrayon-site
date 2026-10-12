@@ -1,7 +1,5 @@
-/* Sharpened Crayon: site styles. Brand: brand/brand-kit.md (colors, Fredoka + Nunito). */
-@font-face{font-family:"Fredoka";src:url(../fonts/fredoka-500.woff2?v=f7d79712) format("woff2");font-weight:500;font-display:swap}
-@font-face{font-family:"Fredoka";src:url(../fonts/fredoka-600.woff2?v=a7803749) format("woff2");font-weight:600;font-display:swap}
-@font-face{font-family:"Fredoka";src:url(../fonts/fredoka-700.woff2?v=5f713abe) format("woff2");font-weight:700;font-display:swap}
+/* Sharpened Crayon: site styles. Brand: brand/brand-kit.md (colors, Rammetto One + Nunito). */
+@font-face{font-family:"Rammetto One";src:url(../fonts/rammetto-one-400.woff2?v=cd9eeb13) format("woff2");font-weight:400;font-display:swap}
 @font-face{font-family:"Nunito";src:url(../fonts/nunito-400.woff2?v=7d8b9f8d) format("woff2");font-weight:400;font-display:swap}
 @font-face{font-family:"Nunito";src:url(../fonts/nunito-700.woff2?v=829b73f2) format("woff2");font-weight:700;font-display:swap}
 @font-face{font-family:"Nunito";src:url(../fonts/nunito-800.woff2?v=4038f77a) format("woff2");font-weight:800;font-display:swap}
@@ -17,7 +15,7 @@ html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
 body{margin:0;background:var(--paper);color:var(--ink);font:400 1.0625rem/1.6 "Nunito",system-ui,-apple-system,"Segoe UI",sans-serif}
 img{max-width:100%;height:auto;display:block}
-h1,h2,h3,h4{font-family:"Fredoka","Nunito",system-ui,sans-serif;font-weight:600;line-height:1.12;margin:0 0 .5em;letter-spacing:-.01em}
+h1,h2,h3,h4{font-family:"Rammetto One","Nunito",system-ui,sans-serif;font-weight:400;line-height:1.12;margin:0 0 .5em;letter-spacing:-.01em}
 h1{font-size:clamp(2.1rem,5vw,3.4rem)}
 h2{font-size:clamp(1.6rem,3.4vw,2.3rem)}
 h3{font-size:1.3rem}
@@ -59,7 +57,7 @@ a:hover{color:#000;text-decoration-color:var(--sky)}
 }
 
 /* buttons: Graphite text on Tangerine keeps WCAG AA contrast */
-.btn{display:inline-block;background:var(--tang);color:var(--ink);font-family:"Fredoka","Nunito",system-ui,sans-serif;font-weight:600;text-decoration:none;padding:13px 22px;border-radius:999px;border:2px solid var(--tang);line-height:1.2;transition:transform .12s ease,box-shadow .12s ease}
+.btn{display:inline-block;background:var(--tang);color:var(--ink);font-family:"Rammetto One","Nunito",system-ui,sans-serif;font-weight:400;text-decoration:none;padding:13px 22px;border-radius:999px;border:2px solid var(--tang);line-height:1.2;transition:transform .12s ease,box-shadow .12s ease}
 .btn:hover{color:var(--ink);transform:translateY(-1px);box-shadow:0 6px 0 rgba(35,40,56,.15)}
 .btn-ghost{background:transparent;border-color:var(--ink)}
 .btn-ghost:hover{background:#fff}
@@ -109,12 +107,12 @@ section{padding:64px 0}
 /* steps */
 .steps{counter-reset:s;list-style:none;padding:0;margin:0;display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
 .steps>li{counter-increment:s;background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:24px;position:relative;box-shadow:var(--shadow)}
-.steps>li::before{content:counter(s);font-family:"Fredoka",sans-serif;font-weight:600;display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--sun);margin-bottom:12px;font-size:1.3rem}
+.steps>li::before{content:counter(s);font-family:"Rammetto One",sans-serif;font-weight:400;display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--sun);margin-bottom:12px;font-size:1.3rem}
 .steps h3{font-size:1.15rem}
 
 /* packages */
 .pkg{display:flex;flex-direction:column}
-.pkg .price{font-family:"Fredoka",sans-serif;font-weight:600;font-size:2rem;line-height:1.1;margin:.1em 0 .2em}
+.pkg .price{font-family:"Rammetto One",sans-serif;font-weight:400;font-size:2rem;line-height:1.1;margin:.1em 0 .2em}
 .pkg .price small{font-size:1rem;color:var(--muted);font-family:"Nunito",sans-serif;font-weight:700}
 .pkg .tag{font-style:italic;color:var(--muted)}
 .pkg .btn{margin-top:auto;align-self:flex-start}
@@ -156,7 +154,7 @@ tr:last-child td{border-bottom:0}
 
 /* FAQ */
 .faq details{background:#fff;border:1px solid var(--line);border-radius:14px;padding:4px 20px;margin:0 0 12px;box-shadow:var(--shadow)}
-.faq summary{cursor:pointer;font-family:"Fredoka",sans-serif;font-weight:600;font-size:1.12rem;padding:14px 0;list-style:none;display:flex;justify-content:space-between;gap:16px}
+.faq summary{cursor:pointer;font-family:"Rammetto One",sans-serif;font-weight:400;font-size:1.12rem;padding:14px 0;list-style:none;display:flex;justify-content:space-between;gap:16px}
 .faq summary::-webkit-details-marker{display:none}
 .faq summary::after{content:"+";font-size:1.5rem;line-height:1;color:var(--tang)}
 .faq details[open] summary::after{content:"\2013"}
@@ -235,6 +233,18 @@ tr:last-child td{border-bottom:0}
 .lp-sample-wide .lp-pages{max-width:640px}
 @media (max-width:520px){.lp-sample-head{grid-template-columns:110px 1fr;gap:14px}}
 
-/* Fredoka brand font (Oct 12, 2026): the header/footer logos are SVGs with the wordmark outlined in Fredoka 700
-   (assets/img/brand/*-700.svg, from site_build/fredoka.py). This rule covers any live-text brand name. */
-.brand,.site-footer .brand-name{font-family:"Fredoka","Nunito",system-ui,sans-serif;font-weight:700}
+/* Brand font (Oct 12, 2026): header/footer logos are SVGs with the wordmark outlined in Rammetto One
+   (assets/img/brand/*-rammetto.svg, from site_build/rammetto.py; tagline stays Nunito). This rule covers any live-text brand name. */
+.brand,.site-footer .brand-name{font-family:"Rammetto One","Nunito",system-ui,sans-serif;font-weight:400}
+/* Bigger hero (from site-previews/rammetto.patch, which includes the hero-big changes) */
+.hero h1{font-weight:400;font-size:clamp(2.6rem,1.6rem + 4.2vw,4.6rem);line-height:1.18;letter-spacing:.01em}
+.hero .eyebrow{font-size:clamp(.88rem,.8rem + .25vw,1rem);letter-spacing:.14em}
+.hero .lead{font-size:clamp(1.25rem,1.05rem + .45vw,1.45rem);line-height:1.6}
+.hero .btn{font-size:clamp(1.15rem,1rem + .25vw,1.2rem);padding:15px 20px}
+@media (max-width:420px){.hero .btn-row .btn{flex:1 1 100%;text-align:center}}
+/* Rammetto One (Oct 12, 2026): much wider than Fredoka; tighter sizes so headings never overflow. Single weight 400: no faux bold. */
+h1,h2,h3,h4{letter-spacing:0;line-height:1.2}
+.hero h1{font-size:clamp(1.85rem,1.1rem + 3.6vw,3.9rem);line-height:1.22;letter-spacing:0;overflow-wrap:break-word}
+.btn{font-size:.98em;letter-spacing:.01em}
+.hero .btn{font-size:clamp(1rem,.9rem + .2vw,1.05rem);padding:14px 18px}
+h1,h2,h3,h4,.btn,.faq summary,.pkg .price,.steps>li::before,.brand,.site-footer .brand-name{font-synthesis:none}
