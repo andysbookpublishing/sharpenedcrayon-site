@@ -1,10 +1,10 @@
 /* Sharpened Crayon: site styles. Brand: brand/brand-kit.md (colors, Fredoka + Nunito). */
-@font-face{font-family:"Fredoka";src:url(../fonts/fredoka-500.woff2) format("woff2");font-weight:500;font-display:swap}
-@font-face{font-family:"Fredoka";src:url(../fonts/fredoka-600.woff2) format("woff2");font-weight:600;font-display:swap}
-@font-face{font-family:"Fredoka";src:url(../fonts/fredoka-700.woff2) format("woff2");font-weight:700;font-display:swap}
-@font-face{font-family:"Nunito";src:url(../fonts/nunito-400.woff2) format("woff2");font-weight:400;font-display:swap}
-@font-face{font-family:"Nunito";src:url(../fonts/nunito-700.woff2) format("woff2");font-weight:700;font-display:swap}
-@font-face{font-family:"Nunito";src:url(../fonts/nunito-800.woff2) format("woff2");font-weight:800;font-display:swap}
+@font-face{font-family:"Fredoka";src:url(../fonts/fredoka-500.woff2?v=f7d79712) format("woff2");font-weight:500;font-display:swap}
+@font-face{font-family:"Fredoka";src:url(../fonts/fredoka-600.woff2?v=a7803749) format("woff2");font-weight:600;font-display:swap}
+@font-face{font-family:"Fredoka";src:url(../fonts/fredoka-700.woff2?v=5f713abe) format("woff2");font-weight:700;font-display:swap}
+@font-face{font-family:"Nunito";src:url(../fonts/nunito-400.woff2?v=7d8b9f8d) format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"Nunito";src:url(../fonts/nunito-700.woff2?v=829b73f2) format("woff2");font-weight:700;font-display:swap}
+@font-face{font-family:"Nunito";src:url(../fonts/nunito-800.woff2?v=4038f77a) format("woff2");font-weight:800;font-display:swap}
 
 :root{
   --ink:#232838; --tang:#F26A3D; --sun:#FFC23D; --sky:#2E9CD6; --berry:#D94A7E; --paper:#FFF8EE;
