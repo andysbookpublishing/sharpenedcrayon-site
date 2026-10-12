@@ -214,3 +214,18 @@ tr:last-child td{border-bottom:0}
 /* Packages page: pay-now deposit buttons (Oct 11, 2026; sixth pass) */
 .pkg-simple .pkg-alt{display:block;text-align:center;margin-top:10px;font-weight:700;font-size:.95rem;color:var(--ink)}
 .pkg-deposits{text-align:center;font-size:.92rem;color:#5a5f6e;max-width:760px;margin:20px auto 0;line-height:1.5}
+/* niche landing pages (DRAFT Oct 12, 2026): breadcrumb, footer Industries column, sample cards */
+.breadcrumb{max-width:var(--wrap);margin:0 auto;padding:14px 20px 0;font-size:.88rem}
+.breadcrumb ol{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:4px}
+.breadcrumb li+li::before{content:"›";margin:0 6px;color:var(--muted)}
+.breadcrumb [aria-current]{color:var(--muted)}
+.site-footer .wrap{grid-template-columns:1.3fr 1fr .8fr}
+.site-footer .footer-h{font-weight:800;margin:0 0 6px;color:#fff}
+.site-footer .footer-ind ul{flex-direction:column}
+@media (max-width:760px){.site-footer .wrap{grid-template-columns:1fr}}
+.lp-sample-head{display:grid;grid-template-columns:150px 1fr;gap:20px;align-items:start}
+.lp-sample-head .lp-cover{display:block}
+.lp-sample h3{margin-top:0}
+.lp-pages{grid-template-columns:repeat(3,1fr);margin-top:18px}
+.lp-sample-wide .lp-pages{max-width:640px}
+@media (max-width:520px){.lp-sample-head{grid-template-columns:110px 1fr;gap:14px}}
