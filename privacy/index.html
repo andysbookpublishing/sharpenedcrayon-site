@@ -41,7 +41,7 @@
           <li><a href="../how-it-works/">How it works</a></li>
           <li><a href="../faq/">FAQ</a></li>
           <li><a href="../about/">About</a></li>
-          <li><a class="btn" href="mailto:sharpenedcrayon@mail.grokbot.com?subject=Quote%20request%20-%20Sharpened%20Crayon&amp;body=Hi%20Sharpened%20Crayon%2C%0A%0AI%27d%20like%20a%20quote%20and%20a%20free%203-page%20sample.%0A%0ABusiness%20name%3A%0AIndustry%3A%0AQuantity%20%28250%2C%20500%2C%201%2C000%20or%20more%29%3A%0ADeadline%20%28books%20in%20hand%20by%29%3A%0AShip%20to%20%28city%2C%20state%29%3A%0ALogo%20%28attached%2C%20or%20paste%20a%20link%29%3A%0AWhat%20the%20book%20should%20feature%3A%0AReferred%20by%20%28optional%3A%20name%20or%20referral%20code%29%3A%0A%0AThanks%21">Get a quote</a></li>
+          <li><a class="btn" href="../quote/" data-sample-modal>Get a quote</a></li>
         </ul>
       </nav>
       <details class="nav menu">
@@ -54,7 +54,7 @@
           <li><a href="../how-it-works/">How it works</a></li>
           <li><a href="../faq/">FAQ</a></li>
           <li><a href="../about/">About</a></li>
-          <li><a class="btn" href="mailto:sharpenedcrayon@mail.grokbot.com?subject=Quote%20request%20-%20Sharpened%20Crayon&amp;body=Hi%20Sharpened%20Crayon%2C%0A%0AI%27d%20like%20a%20quote%20and%20a%20free%203-page%20sample.%0A%0ABusiness%20name%3A%0AIndustry%3A%0AQuantity%20%28250%2C%20500%2C%201%2C000%20or%20more%29%3A%0ADeadline%20%28books%20in%20hand%20by%29%3A%0AShip%20to%20%28city%2C%20state%29%3A%0ALogo%20%28attached%2C%20or%20paste%20a%20link%29%3A%0AWhat%20the%20book%20should%20feature%3A%0AReferred%20by%20%28optional%3A%20name%20or%20referral%20code%29%3A%0A%0AThanks%21">Get a quote</a></li>
+          <li><a class="btn" href="../quote/" data-sample-modal>Get a quote</a></li>
           </ul>
         </nav>
       </details>
@@ -114,6 +114,68 @@
       <p class="legal">© 2026 Sharpened Crayon. All artwork is original. We don't use trademarked characters without permission.</p>
     </div>
   </footer>
+<style>
+.scm-back{position:fixed;inset:0;z-index:1000;background:rgba(35,40,56,.55);display:flex;align-items:center;justify-content:center;padding:16px}
+.scm-back[hidden]{display:none}
+.scm{background:var(--paper,#FFF8EE);color:var(--ink,#232838);border-radius:var(--radius,18px);box-shadow:0 20px 60px rgba(35,40,56,.35);width:100%;max-width:520px;max-height:calc(100vh - 32px);overflow:auto;padding:28px;position:relative;border-top:8px solid var(--tang,#F26A3D);font-family:"Nunito",system-ui,sans-serif}
+.scm h2{font-family:"Rammetto One","Nunito",sans-serif;font-size:1.6rem;margin:0 36px .3em 0}
+.scm p{margin:0 0 14px}
+.scm label{display:block;font-weight:800;margin:12px 0 4px}
+.scm .opt{font-weight:400;color:var(--muted,#4a5066)}
+.scm input,.scm select,.scm textarea{width:100%;font:inherit;padding:11px 12px;border:2px solid var(--line,#e8dccb);border-radius:12px;background:#fff;color:inherit}
+.scm input:focus,.scm select:focus,.scm textarea:focus{outline:3px solid var(--sky,#2E9CD6);outline-offset:1px;border-color:var(--sky,#2E9CD6)}
+.scm textarea{min-height:84px;resize:vertical}
+.scm .scm-x{position:absolute;top:12px;right:12px;width:40px;height:40px;border-radius:50%;border:0;background:var(--sun-soft,#fff1cf);font-size:1.5rem;line-height:1;cursor:pointer;color:var(--ink,#232838)}
+.scm .scm-x:focus-visible{outline:3px solid var(--sky,#2E9CD6)}
+.scm .scm-hp{position:absolute!important;left:-9999px;width:1px;height:1px;overflow:hidden}
+.scm button[type=submit]{margin-top:18px;width:100%;border:0;cursor:pointer;font:800 1.05rem "Nunito",sans-serif}
+.scm-msg{margin-top:14px;padding:12px 14px;border-radius:12px;font-weight:700}
+.scm-msg[hidden]{display:none}
+.scm-msg.ok{background:var(--sky-soft,#e3f2fa)}
+.scm-msg.err{background:var(--tang-soft,#fde4d9)}
+body.scm-open{overflow:hidden}
+@media (max-width:600px){.scm-back{padding:0;align-items:stretch}.scm{max-width:none;max-height:none;min-height:100%;border-radius:0;padding:24px 18px}}
+</style>
+<div class="scm-back" id="sample-modal" hidden>
+  <div class="scm" role="dialog" aria-modal="true" aria-labelledby="scm-title" aria-describedby="scm-desc">
+    <button type="button" class="scm-x" data-scm-close aria-label="Close">&times;</button>
+    <h2 id="scm-title">Get a free 3-page sample</h2>
+    <p id="scm-desc">Tell us a little about you. We reply within 1 business day. No obligation.</p>
+    <form id="scm-form" novalidate>
+      <label for="scm-name">Name</label><input id="scm-name" name="name" autocomplete="name" required>
+      <label for="scm-email">Email</label><input id="scm-email" name="email" type="email" autocomplete="email" required>
+      <label for="scm-biz">Business name <span class="opt">(optional)</span></label><input id="scm-biz" name="business" autocomplete="organization">
+      <label for="scm-sample">Which sample?</label><select id="scm-sample" name="sample"><option value="General / my own business">General / my own business</option><option value="Mike Rivera Realtor">Mike Rivera Realtor</option><option value="Sparkle &amp; Brush">Sparkle &amp; Brush</option><option value="Nonna Lucia&#x27;s">Nonna Lucia&#x27;s</option><option value="Fernbrook Valley">Fernbrook Valley</option><option value="Cory&#x27;s 9th Birthday">Cory&#x27;s 9th Birthday</option><option value="Other">Other</option></select>
+      <label for="scm-text">Message <span class="opt">(optional)</span></label><textarea id="scm-text" name="message"></textarea>
+      <div class="scm-hp" aria-hidden="true"><label for="scm-hp">Leave this empty</label><input id="scm-hp" name="_honey" tabindex="-1" autocomplete="off"></div>
+      <button type="submit" class="btn">Send my request</button>
+      <div class="scm-msg" id="scm-msg" role="status" aria-live="polite" hidden></div>
+    </form>
+  </div>
+</div>
+<script>
+(function(){
+var M=document.getElementById("sample-modal"),F=document.getElementById("scm-form"),G=document.getElementById("scm-msg"),last=null;
+function foc(){return M.querySelectorAll('button,input:not([tabindex="-1"]),select,textarea,a[href]');}
+function open(e,src){if(e)e.preventDefault();last=src||document.activeElement;var d=document.querySelector("details.nav.menu[open]");if(d)d.removeAttribute("open");
+M.hidden=false;document.body.classList.add("scm-open");var pre=src&&src.getAttribute("data-sample");if(pre)document.getElementById("scm-sample").value=pre;document.getElementById("scm-name").focus();}
+function close(){M.hidden=true;document.body.classList.remove("scm-open");if(last&&last.focus)last.focus();}
+document.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest("[data-sample-modal]");if(a&&!e.metaKey&&!e.ctrlKey&&!e.shiftKey)open(e,a);});
+M.addEventListener("click",function(e){if(e.target===M||e.target.closest("[data-scm-close]"))close();});
+document.addEventListener("keydown",function(e){if(M.hidden)return;if(e.key==="Escape"){close();return;}
+if(e.key==="Tab"){var f=foc(),a=f[0],z=f[f.length-1];if(e.shiftKey&&document.activeElement===a){e.preventDefault();z.focus();}else if(!e.shiftKey&&document.activeElement===z){e.preventDefault();a.focus();}}});
+function say(t,ok){G.textContent=t;G.className="scm-msg "+(ok?"ok":"err");G.hidden=false;}
+F.addEventListener("submit",function(e){e.preventDefault();var n=F.name.value.trim(),m=F.email.value.trim();
+if(!n||!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(m)){say("Please add your name and a valid email.",false);(n?F.email:F.name).focus();return;}
+if(F._honey.value){say("Thanks! We'll be in touch.",true);return;}
+var b=F.querySelector("button[type=submit]");b.disabled=true;b.textContent="Sending…";
+fetch("https://formsubmit.co/ajax/sharpenedcrayon@mail.grokbot.com",{method:"POST",headers:{"Content-Type":"application/json","Accept":"application/json"},body:JSON.stringify({name:n,email:m,business:F.business.value.trim(),sample:F.sample.value,message:F.message.value.trim(),page:location.pathname,_subject:"Free sample request",_template:"table",_captcha:"false",_replyto:m,_honey:""})})
+.then(function(r){return r.json().then(function(j){if(!r.ok||String(j.success)!=="true")throw 0;});})
+.then(function(){F.reset();say("Thanks! Your request is in. We'll email you within 1 business day.",true);})
+.catch(function(){say("Sorry, that didn't send. Please try again, or email sharpenedcrayon@mail.grokbot.com.",false);})
+.finally(function(){b.disabled=false;b.textContent="Send my request";});});
+})();
+</script>
   <script src="../assets/js/site.js?v=b0197897" defer></script>
 </body>
 </html>
