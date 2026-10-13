@@ -126,7 +126,7 @@
     <p>Fill this in and we'll confirm details within 1 business day. <strong>No payment now:</strong> you pay after we confirm.</p>
     <form id="ccm-form" class="order-form" data-kind="club" action="https://formsubmit.co/sharpenedcrayon@mail.grokbot.com" method="POST" enctype="multipart/form-data" novalidate>
       <input type="hidden" name="_subject" value="Crayon Club order">
-      <input type="hidden" name="_template" value="table"><input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="table"><input type="hidden" name="_captcha" value="false"><input type="hidden" name="_cc" value="Andysbookpublishing@gmail.com">
       <input type="hidden" name="_next" value="https://sharpenedcrayon.com/thank-you/">
       <label for="ccm-pname">Parent / your name</label><input id="ccm-pname" name="name" autocomplete="name" required>
       <label for="ccm-email">Email</label><input id="ccm-email" name="email" type="email" autocomplete="email" required>
@@ -168,7 +168,7 @@
     <p>Fill this in and we'll confirm details within 1 business day. <strong>No payment now:</strong> you pay after we confirm.</p>
     <form id="ppm-form" class="order-form" data-kind="pack" action="https://formsubmit.co/sharpenedcrayon@mail.grokbot.com" method="POST" enctype="multipart/form-data" novalidate>
       <input type="hidden" name="_subject" value="Party Pack order">
-      <input type="hidden" name="_template" value="table"><input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="table"><input type="hidden" name="_captcha" value="false"><input type="hidden" name="_cc" value="Andysbookpublishing@gmail.com">
       <input type="hidden" name="_next" value="https://sharpenedcrayon.com/thank-you/">
       <label for="ppm-pname">Parent / your name</label><input id="ppm-pname" name="name" autocomplete="name" required>
       <label for="ppm-email">Email</label><input id="ppm-email" name="email" type="email" autocomplete="email" required>
@@ -343,7 +343,7 @@ F.addEventListener("submit",function(e){e.preventDefault();var n=F.name.value.tr
 if(!n||!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(m)){say("Please add your name and a valid email.",false);(n?F.email:F.name).focus();return;}
 if(F._honey.value){say("Thanks! We'll be in touch.",true);return;}
 var b=F.querySelector("button[type=submit]");b.disabled=true;b.textContent="Sending…";
-fetch("https://formsubmit.co/ajax/sharpenedcrayon@mail.grokbot.com",{method:"POST",headers:{"Content-Type":"application/json","Accept":"application/json"},body:JSON.stringify({name:n,email:m,business:F.business.value.trim(),sample:F.sample.value,message:F.message.value.trim(),page:location.pathname,_subject:"Free sample request",_template:"table",_captcha:"false",_replyto:m,_honey:""})})
+fetch("https://formsubmit.co/ajax/sharpenedcrayon@mail.grokbot.com",{method:"POST",headers:{"Content-Type":"application/json","Accept":"application/json"},body:JSON.stringify({name:n,email:m,business:F.business.value.trim(),sample:F.sample.value,message:F.message.value.trim(),page:location.pathname,_subject:"Free sample request",_template:"table",_captcha:"false",_replyto:m,_cc:"Andysbookpublishing@gmail.com",_honey:""})})
 .then(function(r){return r.json().then(function(j){if(!r.ok||String(j.success)!=="true")throw 0;});})
 .then(function(){F.reset();say("Thanks! Your request is in. We'll email you within 1 business day.",true);})
 .catch(function(){say("Sorry, that didn't send. Please try again, or email sharpenedcrayon@mail.grokbot.com.",false);})

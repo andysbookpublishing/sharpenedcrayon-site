@@ -285,7 +285,7 @@ F.addEventListener("submit",function(e){e.preventDefault();var n=F.name.value.tr
 if(!n||!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(m)){say("Please add your name and a valid email.",false);(n?F.email:F.name).focus();return;}
 if(F._honey.value){say("Thanks! We'll be in touch.",true);return;}
 var b=F.querySelector("button[type=submit]");b.disabled=true;b.textContent="Sending…";
-fetch("https://formsubmit.co/ajax/sharpenedcrayon@mail.grokbot.com",{method:"POST",headers:{"Content-Type":"application/json","Accept":"application/json"},body:JSON.stringify({name:n,email:m,business:F.business.value.trim(),sample:F.sample.value,message:F.message.value.trim(),page:location.pathname,_subject:"Free sample request",_template:"table",_captcha:"false",_replyto:m,_honey:""})})
+fetch("https://formsubmit.co/ajax/sharpenedcrayon@mail.grokbot.com",{method:"POST",headers:{"Content-Type":"application/json","Accept":"application/json"},body:JSON.stringify({name:n,email:m,business:F.business.value.trim(),sample:F.sample.value,message:F.message.value.trim(),page:location.pathname,_subject:"Free sample request",_template:"table",_captcha:"false",_replyto:m,_cc:"Andysbookpublishing@gmail.com",_honey:""})})
 .then(function(r){return r.json().then(function(j){if(!r.ok||String(j.success)!=="true")throw 0;});})
 .then(function(){F.reset();say("Thanks! Your request is in. We'll email you within 1 business day.",true);})
 .catch(function(){say("Sorry, that didn't send. Please try again, or email sharpenedcrayon@mail.grokbot.com.",false);})
