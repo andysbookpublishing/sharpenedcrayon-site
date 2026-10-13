@@ -72,7 +72,7 @@
     <p class="lead">Each month we send a 12-16 page activity book starring your family's mascot, with your child's name on the cover, plus a seasonal printable set. Print as many as you like.</p>
     <div class="btn-row"><a class="btn" href="#club" data-order="ccm">Join Crayon Club</a><a class="btn btn-ghost" href="#party" data-order="ppm">Order a Party Pack</a></div>
   </div>
-  <div><img class="cc-cover" src="../assets/img/crayon-club/nov-2026-cover-sm.webp?v=25018600" width="480" height="621" alt="Layout mockup of the November 2026 Crayon Club cover: Maya's Thankful Harvest, in bold outlined letters above a simple line-art child, leaves and a pumpkin."></div>
+  <div><figure class="cc-compare" style="margin:0"><img style="border:3px solid var(--ink);border-radius:14px;background:#fff;box-shadow:6px 6px 0 var(--sun)" src="../assets/img/crayon-club/crayon-comparison-sm.webp?v=184ed7d3" srcset="../assets/img/crayon-club/crayon-comparison-sm.webp?v=184ed7d3 800w, ../assets/img/crayon-club/crayon-comparison.webp?v=090403f6 1600w" sizes="(max-width:700px) 92vw, 520px" width="800" height="623" alt="Example: photo to coloring book. On the left, a photo of a young girl in a white dress holding a bunch of balloons in a flower field; on the right, the same girl and pose in bold black line art on a coloring-book cover titled Maya's Big Balloon Day." fetchpriority="high"><figcaption class="small" style="margin-top:6px">Example only, not a customer. Photo provided by Andy.</figcaption></figure></div>
 </div></section>
 
 <section class="bg-white" id="club" aria-labelledby="club-h"><div class="wrap">
@@ -215,9 +215,9 @@
 .cc-price{font-family:"Rammetto One",sans-serif;font-size:2.2rem;margin:.2em 0}
 .cc-card{border:3px solid var(--ink);box-shadow:6px 6px 0 var(--sky)}
 .cc-card.pp{box-shadow:6px 6px 0 var(--berry)}
-.cc-teaser{border:3px solid var(--ink);border-radius:var(--radius);background:var(--sun-soft);padding:28px;box-shadow:6px 6px 0 var(--tang);display:grid;gap:24px;grid-template-columns:1fr 200px;align-items:center}
-.cc-teaser img{border:3px solid var(--ink);border-radius:12px;background:#fff;transform:rotate(3deg)}
-@media(max-width:700px){.cc-teaser{grid-template-columns:1fr}.cc-teaser img{max-width:160px;margin:0 auto}}
+.cc-teaser{border:3px solid var(--ink);border-radius:var(--radius);background:var(--sun-soft);padding:28px;box-shadow:6px 6px 0 var(--tang);display:grid;gap:24px;grid-template-columns:1fr minmax(0,520px);align-items:center}
+.cc-teaser img{border:3px solid var(--ink);border-radius:14px;background:#fff;width:100%;height:auto}
+@media(max-width:700px){.cc-teaser{grid-template-columns:1fr}.cc-teaser img{max-width:100%}}
 </style>
 <script>
 (function(){
